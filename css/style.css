@@ -155,6 +155,7 @@ header .container {
 }
 
 .contact {
+  /* display: flex; */
   margin-left: auto;
 }
 
@@ -281,6 +282,9 @@ footer > .container {
 }
 
 .hero-title {
+  width: 696px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 30px;
 
   color: var(--hero-title-color);
@@ -316,12 +320,22 @@ footer > .container {
 }
 
 /* ------------- ADVANTAGES -------------*/
-.advantages-item::before {
+/* .advantages-item::before {
   content: "";
   display: block;
   margin-bottom: 30px;
   height: 120px;
   background-color: var(--advantages-grup);
+} */
+.advantages-icon {
+  width: 270px;
+  height: 120px;
+
+  padding: 25px 100px;
+  margin-bottom: 30px;
+
+  background-color: var(--advantages-grup);
+  border-radius: 4px;
 }
 
 .advantages-list {
