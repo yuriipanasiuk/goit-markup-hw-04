@@ -3,6 +3,7 @@
   --accent-color: #2196f3;
   --client-accent-color: #2196f3;
   --main-second-color: #212121;
+  --header-icon-color: #757575;
   --hero-bg-color: #2f303a;
   --hero-btn-hover: #188ce8;
   --hero-bg-gradient: linear-gradient(
@@ -23,13 +24,16 @@
   --hero-button-text-color: #ffffff;
   --command-item-color: #ffffff;
   --command-social-link: #afb1b8;
-  --commang-social-link-bg: #2196f3;
+  --commang-social-link-hover-bg: #2196f3;
   --command-social-hover: #ffffff;
+  --command-social-link-bg: #ffffff;
   --btn-bg-color: #f5f4fa;
   --advantages-grup: #f5f4fa;
   --border-bottom-color: #ececec;
   --border-color: #eeeeee;
   --icon-color: #afb1b8;
+  --icon-footer-color: #ffffff;
+  --client-icon-color: #afb1b8;
 }
 
 .visually-hidden {
@@ -155,8 +159,31 @@ header .container {
 }
 
 .contact {
-  /* display: flex; */
+  display: flex;
   margin-left: auto;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+}
+
+.contact-link:not(:last-child) {
+  margin-right: 30px;
+}
+.header-icon {
+  display: inline-flex;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: var(--header-icon-color);
+}
+.header-icon:not(:last-child) {
+  margin-right: 10px;
+}
+
+.header-icon:hover {
+  color: var(--accent-color);
 }
 
 .contact-header {
@@ -167,13 +194,13 @@ header .container {
   text-decoration: none;
 }
 
-.contact-header + .contact-header {
-  margin-left: 50px;
-}
-
 .contact-header:hover,
 .contact-header:focus {
   color: var(--accent-color);
+}
+
+.icon-contact {
+  fill: currentColor;
 }
 
 /* ------------- FOOTER -------------*/
@@ -184,6 +211,13 @@ footer {
   background-color: var(--footer-bg-color);
 }
 
+footer > .container {
+  display: flex;
+}
+
+.footer-address {
+  margin-right: 70px;
+}
 .second-footer-color {
   color: var(--foorer-second-color);
 }
@@ -229,44 +263,36 @@ address {
   font-weight: 700;
   line-height: 1.14;
   text-transform: uppercase;
-  align-self: flex-end;
 }
 
 .social-list {
   display: flex;
 }
 
-.social-list .link {
-  display: block;
-  padding: 12px;
-
-  fill: var(--footer-main-social-link-color);
-}
-
-.social-item {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-}
-
-.footer-item {
-  background-color: var(--footer-bg-social-link);
-}
-
-.footer-item:hover {
-  background-color: var(--footer-social-link-hover);
-}
-
 .social-item:not(:last-child) {
   margin-right: 10px;
 }
 
-footer > .container {
-  display: flex;
+.social-link {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
-.footer {
-  margin-right: 70px;
+.footer-link {
+  background-color: var(--footer-bg-social-link);
+  color: var(--icon-footer-color);
+}
+
+.footer-link:hover {
+  background-color: var(--footer-social-link-hover);
+}
+
+.social-icon {
+  fill: currentColor;
 }
 /* ------------- CSS STUDIA----------*/
 
@@ -274,10 +300,13 @@ footer > .container {
 .hero {
   padding-top: 200px;
   padding-bottom: 200px;
+  max-width: 1600px;
+  margin: 0 auto;
   height: 600px;
+  background-color: var(--hero-bg-color);
   background-image: var(--hero-bg-gradient), url("../images/hero-bg-image.jpg");
-  background-size: contain;
-
+  background-repeat: no-repeat;
+  background-size: cover;
   text-align: center;
 }
 
@@ -320,21 +349,15 @@ footer > .container {
 }
 
 /* ------------- ADVANTAGES -------------*/
-/* .advantages-item::before {
-  content: "";
-  display: block;
-  margin-bottom: 30px;
-  height: 120px;
-  background-color: var(--advantages-grup);
-} */
+
 .advantages-icon {
   width: 270px;
   height: 120px;
 
-  padding: 25px 100px;
   margin-bottom: 30px;
-
+  padding: 0;
   background-color: var(--advantages-grup);
+  border: none;
   border-radius: 4px;
 }
 
@@ -423,29 +446,26 @@ footer > .container {
   text-align: center;
 }
 
-.command-list-icon {
-  display: flex;
+.command-social-link {
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 30px;
 }
 
 .command-link {
-  display: block;
-  padding: 12px;
-  fill: var(--command-social-link);
-  justify-content: center;
+  background-color: var(--command-social-link-bg);
+  color: var(--command-social-link);
 }
 
 .command-link:hover {
-  fill: var(--command-social-hover);
-}
-.command-social-link {
-  padding-bottom: 30px;
-  padding-left: 32px;
-  padding-right: 32px;
+  background-color: var(--commang-social-link-hover-bg);
+  color: var(--command-social-hover);
 }
 
-.command-social-item:hover {
-  background-color: var(--commang-social-link-bg);
+.command-icon {
+  fill: currentColor;
 }
+
 /* ------------- CLIENT -------------*/
 .client-list {
   display: flex;
@@ -457,16 +477,25 @@ footer > .container {
 }
 
 .client-link {
-  display: block;
-  padding: 16px 32px;
-  border: 1px solid #afb1b8;
-  border-radius: 4px;
+  display: inline-flex;
+  width: 170px;
+  height: 92px;
   align-items: center;
-  fill: var(--icon-color);
+  justify-content: center;
+
+  color: var(--client-icon-color);
+
+  border-radius: 4px;
+  border: 1px solid #afb1b8;
 }
+
 .client-link:hover {
   border-color: var(--client-accent-color);
-  fill: var(--client-accent-color);
+  color: var(--client-accent-color);
+}
+
+.client-icon {
+  fill: currentColor;
 }
 
 /* ------------- CSS PORTFOLIO -------------*/
