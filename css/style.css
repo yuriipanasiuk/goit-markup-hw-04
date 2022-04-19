@@ -4,6 +4,7 @@
   --client-accent-color: #2196f3;
   --main-second-color: #212121;
   --header-icon-color: #757575;
+  --header-icon-hover: #2196f3;
   --hero-bg-color: #2f303a;
   --hero-btn-hover: #188ce8;
   --hero-bg-gradient: linear-gradient(
@@ -12,7 +13,7 @@
     rgba(47, 48, 58, 0.4)
   );
   --footer-bg-color: #2f303a;
-  --command-bg-color: #f5f4fa;
+  --team-bg-color: #f5f4fa;
   --main-bg-color: #ffffff;
   --foorer-second-color: #ffffff;
   --footer-adress-color: #ffffff;
@@ -22,11 +23,11 @@
   --hover-btn-color: #ffffff;
   --hero-title-color: #ffffff;
   --hero-button-text-color: #ffffff;
-  --command-item-color: #ffffff;
-  --command-social-link: #afb1b8;
-  --commang-social-link-hover-bg: #2196f3;
-  --command-social-hover: #ffffff;
-  --command-social-link-bg: #ffffff;
+  --team-item-color: #ffffff;
+  --team-social-link: #afb1b8;
+  --team-social-link-hover-bg: #2196f3;
+  --team-social-hover: #ffffff;
+  --team-social-link-bg: #ffffff;
   --btn-bg-color: #f5f4fa;
   --advantages-grup: #f5f4fa;
   --border-bottom-color: #ececec;
@@ -143,6 +144,7 @@ header .container {
   padding-bottom: 32px;
 
   color: var(--main-second-color);
+
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
@@ -158,36 +160,30 @@ header .container {
   color: var(--accent-color);
 }
 
-.contact {
-  display: flex;
+.contact-block {
   margin-left: auto;
 }
 
-.contact-link {
+.contact-link-list {
   display: flex;
   align-items: center;
 }
 
-.contact-link:not(:last-child) {
-  margin-right: 30px;
-}
-.header-icon {
-  display: inline-flex;
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  color: var(--header-icon-color);
-}
-.header-icon:not(:last-child) {
+.icon-contact {
   margin-right: 10px;
+  fill: currentColor;
 }
 
-.header-icon:hover {
-  color: var(--accent-color);
+.contact-list-item:not(:last-child) {
+  margin-right: 30px;
 }
 
 .contact-header {
-  color: var(--main-text-color);
+  display: flex;
+  align-items: center;
+
+  color: var(--header-icon-color);
+
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
@@ -196,11 +192,7 @@ header .container {
 
 .contact-header:hover,
 .contact-header:focus {
-  color: var(--accent-color);
-}
-
-.icon-contact {
-  fill: currentColor;
+  color: var(--header-icon-hover);
 }
 
 /* ------------- FOOTER -------------*/
@@ -208,6 +200,7 @@ header .container {
 footer {
   padding-top: 60px;
   padding-bottom: 60px;
+
   background-color: var(--footer-bg-color);
 }
 
@@ -218,6 +211,7 @@ footer > .container {
 .footer-address {
   margin-right: 70px;
 }
+
 .second-footer-color {
   color: var(--foorer-second-color);
 }
@@ -233,6 +227,7 @@ address {
 
 .footer-address {
   margin-bottom: 9px;
+
   color: var(--footer-adress-color);
 
   line-height: 1.71;
@@ -241,8 +236,9 @@ address {
 .contact-footer {
   display: block;
 
-  line-height: 1.71;
   color: rgba(255, 255, 255, 0.6);
+
+  line-height: 1.71;
   text-decoration: none;
 }
 
@@ -258,6 +254,7 @@ address {
 .social-text {
   margin-bottom: 20px;
   padding-top: 12px;
+
   color: #ffffff;
 
   font-weight: 700;
@@ -279,6 +276,7 @@ address {
   height: 44px;
   align-items: center;
   justify-content: center;
+
   border-radius: 50%;
 }
 
@@ -287,7 +285,8 @@ address {
   color: var(--icon-footer-color);
 }
 
-.footer-link:hover {
+.footer-link:hover,
+.footer-link:focus {
   background-color: var(--footer-social-link-hover);
 }
 
@@ -303,11 +302,12 @@ address {
   max-width: 1600px;
   margin: 0 auto;
   height: 600px;
+  text-align: center;
+
   background-color: var(--hero-bg-color);
   background-image: var(--hero-bg-gradient), url("../images/hero-bg-image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  text-align: center;
 }
 
 .hero-title {
@@ -329,12 +329,13 @@ address {
   height: 50px;
 
   color: var(--hero-button-text-color);
+  background-color: var(--accent-color);
+
   font-family: inherit;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
-  background-color: var(--accent-color);
 
   cursor: pointer;
 
@@ -356,6 +357,7 @@ address {
 
   margin-bottom: 30px;
   padding: 0;
+
   background-color: var(--advantages-grup);
   border: none;
   border-radius: 4px;
@@ -402,67 +404,68 @@ address {
   margin-right: 30px;
 }
 
-/* ------------- COMMAND -------------*/
-.command {
-  background-color: var(--command-bg-color);
+/* ------------- TEAM -------------*/
+.team {
+  background-color: var(--team-bg-color);
 }
 
-.command-list {
+.team-list {
   display: flex;
   justify-content: center;
 }
 
-.command-item {
-  background-color: var(--command-item-color);
+.team-item {
+  background-color: var(--team-item-color);
 
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
 
-.command-item:not(:last-child) {
+.team-item:not(:last-child) {
   margin-right: 30px;
 }
 
-.command-content {
+.team-content {
   padding-top: 30px;
   margin-bottom: 16px;
 }
 
-.command-name {
+.team-name {
   margin-bottom: 10px;
+
+  text-align: center;
 
   color: var(--main-second-color);
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
-
-  text-align: center;
 }
 
-.command-job {
+.team-job {
   font-size: 16px;
   line-height: 1.19;
   text-align: center;
 }
 
-.command-social-link {
+.team-social-link {
   padding-left: 32px;
   padding-right: 32px;
   padding-bottom: 30px;
 }
 
-.command-link {
-  background-color: var(--command-social-link-bg);
-  color: var(--command-social-link);
+.team-link {
+  background-color: var(--team-social-link-bg);
+  color: var(--team-social-link);
 }
 
-.command-link:hover {
-  background-color: var(--commang-social-link-hover-bg);
-  color: var(--command-social-hover);
+.team-link:hover,
+.team-link:focus {
+  background-color: var(--team-social-link-hover-bg);
+  color: var(--team-social-hover);
 }
 
-.command-icon {
+.team-icon {
   fill: currentColor;
 }
 
@@ -489,7 +492,8 @@ address {
   border: 1px solid #afb1b8;
 }
 
-.client-link:hover {
+.client-link:hover,
+.client-link:focus {
   border-color: var(--client-accent-color);
   color: var(--client-accent-color);
 }
@@ -519,17 +523,15 @@ address {
   padding-left: 22px;
 
   color: var(--main-second-color);
+  background-color: var(--btn-bg-color);
+
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.63;
 
-  background-color: var(--btn-bg-color);
-
   cursor: pointer;
-
   border: none;
-
   border-radius: 4px;
 }
 
