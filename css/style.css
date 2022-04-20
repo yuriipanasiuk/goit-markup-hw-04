@@ -225,9 +225,8 @@ address {
   font-style: normal;
 }
 
-.footer-address {
+.footer-text {
   margin-bottom: 9px;
-
   color: var(--footer-adress-color);
 
   line-height: 1.71;
@@ -352,14 +351,15 @@ address {
 /* ------------- ADVANTAGES -------------*/
 
 .advantages-icon {
+  display: flex;
+  margin-bottom: 30px;
+
   width: 270px;
   height: 120px;
-
-  margin-bottom: 30px;
-  padding: 0;
+  align-items: center;
+  justify-content: center;
 
   background-color: var(--advantages-grup);
-  border: none;
   border-radius: 4px;
 }
 
