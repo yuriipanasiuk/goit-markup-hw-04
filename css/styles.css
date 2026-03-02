@@ -379,7 +379,7 @@ address {
   column-gap: 24px;
 }
 
-.portfolio-item {
+.portfolio__item {
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
